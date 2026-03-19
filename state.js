@@ -1,0 +1,11 @@
+localStorage.setItem('name','suyash');
+localStorage.setItem('age','18');
+var name1=localStorage.getItem('name');
+var age1=localStorage.getItem('age');
+console.log(name1);
+console.log(age1);
+localStorage.removeItem('name');
+var user={name:'suyash',age:19};
+localStorage.setItem('user',JSON.stringify(user));
+var user1=JSON.parse(localStorage.getItem('user'));
+console.log(user1);
