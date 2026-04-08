@@ -1,34 +1,29 @@
 function calculateResult(){
-    let n=document.getElementById("objects").value;
-    let i;
-    let total=0;
-    for(i0;i<n;i++){
-        let x=prompt("Enter subject No."+(i+1));
-        total+=x;
+ let n = document.getElementById("subjects").value;
+ let total =0;
+ for(let i=1;i<=n;i++){
+ let marks = parseFloat(prompt("Enter marks for the subject "+i));
+ total += marks;
+ }
+ let average = total / n;
+ let grade;
+ let result;
+ if(average >=90){
+ grade = "A+";
+ }
+ else if(average >=75){
+ grade="A";
+             }
 
-    }
-    let average=total/n;
-    let grade;
-
-   if(average>=90){
-    document.write(grade="A+")
-   }
-   if(average>=75 && average<=90){
-    document.write(grade="A")
-   }
-   if(average>=60 && average<=75){
-    document.write(grade="B")
-   }
-   if(average>=40 && average<=60){
-    document.write(grade="c")
-   }
-   else{
-    document.write(grade="F")
-   }
-   
-   
-   
-    
-        let r=document.getElementById("result").innerHTML="Total marks"+total+"</br>"+"Average marks:"+average+"</br>"+"Grade:"
-        +grade
+else if(average >=60){
+grade="B";
 }
+if(average >=45){
+result = "Pass";
+}
+else{
+result = "Fail";
+}
+document.getElementById("result").innerHTML =
+"Total Marks: "+total +"<br> Average Marks: "+average.toFixed(2) +
+"<br> Grade: "+grade+"<br> Result: "+result}
